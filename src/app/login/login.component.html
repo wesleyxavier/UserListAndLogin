@@ -1,0 +1,38 @@
+<form (ngSubmit)="viewLogin()">
+  <div class="form-content">
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>User Name</mat-label>
+        <label for=""></label>
+        <input
+          matInput
+          required
+          name="username"
+          max="200"
+          [(ngModel)]="viewUsername"
+          type="text"
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          required
+          name="password"
+          max="200"
+          [(ngModel)]="viewPassword"
+          type="password"
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <button mat-raised-button color="primary" type="submit">Entrar</button>
+    </div>
+  </div>
+  <br />
+  <mat-error *ngIf="viewError">
+    {{ viewError }}
+  </mat-error>
+</form>
