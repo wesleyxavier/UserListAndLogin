@@ -1,5 +1,4 @@
 import { AppRoutingModule } from './app-routing.module';
-import { RouterModule } from '@angular/router';
 import { environment } from './../environments/environment.prod';
 import { SessionState } from './app-redux/states/session.state';
 import { LoginModule } from './login/login.module';
@@ -25,6 +24,9 @@ import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
     NgxsModule.forRoot([SessionState], {
       developmentMode: !environment
     }),
+    /**
+     * Set session in localStore
+     */
     NgxsStoragePluginModule.forRoot({
       key: 'session'
     }),

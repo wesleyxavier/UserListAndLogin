@@ -1,3 +1,4 @@
+import { MatButtonModule } from '@angular/material/button';
 import { AppShellCanDeactiveGuard } from './guard/app-shell-can-deactive.guard';
 import { AppShellCanActiveGuard } from './guard/app-shell-can-active.guard';
 import { RouterModule } from '@angular/router';
@@ -13,7 +14,8 @@ import {MatIconModule} from '@angular/material/icon';
     CommonModule,
     RouterModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [AppShellCanActiveGuard, AppShellCanDeactiveGuard]
 })

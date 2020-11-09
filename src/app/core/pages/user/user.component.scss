@@ -1,0 +1,10 @@
+.list {
+  // 48px = size line table
+  // 56 px = size header table
+  height: calc(56px + calc(48px * 10));
+  overflow: auto;
+  .table {
+    width: 100%;
+  }
+}
+

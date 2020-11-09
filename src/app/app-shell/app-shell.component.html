@@ -1,14 +1,15 @@
 <div class="app-shell">
   <div>
-      <mat-toolbar>
-       <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
+    <mat-toolbar>
+      <span>App User</span>
+      <span class="shell-spacer"></span>
+      <button
+        mat-icon-button
+        class="example-icon"
+        (click)="viewNavegate()"
+      >
+        <mat-icon>close</mat-icon>
       </button>
-      <span>My App</span>
-      <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon" (click)="viewNavegate()" aria-label="Example icon-button with share icon">
-       <mat-icon>close</mat-icon>
-     </button>
     </mat-toolbar>
   </div>
   <div class="content">

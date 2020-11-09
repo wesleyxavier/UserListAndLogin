@@ -1,10 +1,10 @@
+import { UserListAction } from './../../../../app-redux/actions/user.action';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {
   CanActivate,
   ActivatedRouteSnapshot,
-  RouterStateSnapshot,
-  UrlTree,
+  RouterStateSnapshot
 } from '@angular/router';
 import { Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
@@ -21,11 +21,13 @@ export class ListAutorizedGuard implements CanActivate {
     state: RouterStateSnapshot
   ): Observable<boolean> {
     return this.http.get<IUser[]>('assets/users.json').pipe(
-      catchError(async (error) => !error),
-      map((users: IUser[]) => {
-        this.store.dispatch([]);
-        return true;
-      })
+      map((users: IUser[]) => this.setList(users)),
+      catchError(async (error) => error)
     );
+  }
+
+  private setList(users: IUser[]) {
+    this.store.dispatch(new UserListAction(users));
+    return !!users;
   }
 }

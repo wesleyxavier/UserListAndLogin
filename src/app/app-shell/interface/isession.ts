@@ -1,4 +1,4 @@
-import { IUser } from './../../core/user/interfaces/iuser';
+import { IUser } from 'src/app/core/pages/user/interfaces/iuser';
 
 export interface ISession {
   active?: boolean;

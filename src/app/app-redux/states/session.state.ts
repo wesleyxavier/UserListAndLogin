@@ -13,16 +13,26 @@ export class SessionState {
 
   constructor() { }
 
+  /**
+   * validate is session active
+   * active and exists token
+   */
   @Selector()
   static isSessionActive(session: ISession) {
     return !!(session.active && session.token);
   }
 
+  /**
+   * Set session
+   */
   @Action(LoginAction)
   loginAction(ctx: StateContext<ISession>, payload: { session: ISession }) {
     ctx.setState(payload.session);
   }
 
+  /**
+   * Clear session ngxs
+   */
   @Action(LogoutAction)
   logoutAction(ctx: StateContext<ISession>) {
     ctx.setState({});

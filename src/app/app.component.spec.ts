@@ -19,15 +19,4 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
-
-  // it(`should have as title 'UserListAndLogin'`, () => {
-  //   const app = fixture.componentInstance;
-  //   expect(app.title).toEqual('UserListAndLogin');
-  // });
-
-  // it('should render title', () => {
-  //   fixture.detectChanges();
-  //   const compiled = fixture.nativeElement;
-  //   expect(compiled.querySelector('.content span').textContent).toContain('UserListAndLogin app is running!');
-  // });
 });

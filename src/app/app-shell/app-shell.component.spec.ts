@@ -1,3 +1,5 @@
+import { MatButtonModule } from '@angular/material/button';
+import { UserState } from './../app-redux/states/user.state';
 import { AppShellCanActiveGuard } from './guard/app-shell-can-active.guard';
 import { AppShellCanDeactiveGuard } from './guard/app-shell-can-deactive.guard';
 import { SessionState } from './../app-redux/states/session.state';
@@ -18,11 +20,12 @@ describe('AppShellComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ AppShellComponent ],
       imports: [
-        NgxsModule.forRoot([SessionState]),
+        NgxsModule.forRoot([SessionState, UserState]),
         RouterTestingModule,
         HttpClientTestingModule,
         MatToolbarModule,
-        MatIconModule
+        MatIconModule,
+        MatButtonModule
       ],
       providers: [AppShellCanActiveGuard, AppShellCanDeactiveGuard]
     })
@@ -36,7 +39,7 @@ describe('AppShellComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create shell component', () => {
     expect(component).toBeTruthy();
   });
 });

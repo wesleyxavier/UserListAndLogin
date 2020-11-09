@@ -3,7 +3,9 @@ import { AppShellCanActiveGuard } from './guard/app-shell-can-active.guard';
 import { Routes, Route } from '@angular/router';
 import { AppShellComponent } from './app-shell.component';
 
-
+/**
+ * Create routes child by Shellcomponent
+ */
 export class ShellService {
 
   static childRoutes(routes: Routes): Route {
