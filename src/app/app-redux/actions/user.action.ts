@@ -15,3 +15,8 @@ export class UserFilterAction {
   static readonly type = '[Base] User filter';
   constructor(public filter: string) {}
 }
+
+export class UserCopyAction {
+  static readonly type = '[Base] User Copy';
+  constructor(public user: IUser) {}
+}

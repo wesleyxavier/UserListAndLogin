@@ -1,3 +1,4 @@
+import { ButtonCopyModule } from './../../components/button.copy.component/button.copy.module';
 import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
 import { UserState } from './../../../app-redux/states/user.state';
@@ -24,6 +25,7 @@ describe('UserComponent', () => {
         MatFormFieldModule,
         MatInputModule,
         MatSortModule,
+        ButtonCopyModule,
         NgxsModule.forRoot([UserState])
       ],
     }).compileComponents();

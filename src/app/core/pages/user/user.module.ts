@@ -1,5 +1,6 @@
+import { ButtonCopyModule } from './../../components/button.copy.component/button.copy.module';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { ActiveCheckboxModule } from './../../components/active.checkbox.component.ts/active.checkbox.module';
+import { ActiveCheckboxModule } from './../../components/active.checkbox.component/active.checkbox.module';
 import { DatePipeModule } from './../../pipes/DatePipe.module';
 import { PaginationScrollDirective } from './../../directives/paginationScroll/pagination-scroll.directive';
 import { MatInputModule } from '@angular/material/input';
@@ -25,7 +26,8 @@ import { ListAutorizedGuard } from './guard/list.autorized.guard';
     NgxsModule.forFeature([UserState]),
     DatePipeModule,
     ActiveCheckboxModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    ButtonCopyModule
   ],
   providers: [ListAutorizedGuard],
 })

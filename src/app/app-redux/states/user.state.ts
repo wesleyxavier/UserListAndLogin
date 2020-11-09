@@ -3,6 +3,7 @@ import {
   UserListAction,
   UserSortAction,
   UserFilterAction,
+  UserCopyAction,
 } from './../actions/user.action';
 import { Injectable } from '@angular/core';
 import { Action, Selector, State, StateContext } from '@ngxs/store';
@@ -66,7 +67,7 @@ export class UserState {
    * Set user sort list
    */
   @Action(UserSortAction)
-  UserSortAction(ctx: StateContext<IUserState>, payload: { sort: Sort }) {
+  userSortAction(ctx: StateContext<IUserState>, payload: { sort: Sort }) {
     const state = ctx.getState();
     ctx.setState({
       ...state,
@@ -78,11 +79,23 @@ export class UserState {
    * Set user filter
    */
   @Action(UserFilterAction)
-  UserFilterAction(ctx: StateContext<IUserState>, payload: { filter: string }) {
+  userFilterAction(ctx: StateContext<IUserState>, payload: { filter: string }) {
     const state = ctx.getState();
     ctx.setState({
       ...state,
       filter: payload.filter,
+    });
+  }
+
+  /**
+   * Set user filter
+   */
+  @Action(UserCopyAction)
+  userCopyAction(ctx: StateContext<IUserState>, payload: { user: IUser }) {
+    const state = ctx.getState();
+    ctx.setState({
+      ...state,
+      list: [...state.list, ...[payload.user]],
     });
   }
 }

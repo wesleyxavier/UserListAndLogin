@@ -1,4 +1,4 @@
-import { UserSortAction, UserFilterAction } from './../../../app-redux/actions/user.action';
+import { UserSortAction, UserFilterAction, UserCopyAction } from './../../../app-redux/actions/user.action';
 import { UserState } from './../../../app-redux/states/user.state';
 import { Component, ViewChild } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
@@ -12,7 +12,7 @@ import { MatSort, Sort } from '@angular/material/sort';
   styleUrls: ['./user.component.scss'],
 })
 export class UserComponent {
-  displayedColumns = ['name', 'active', 'createDate'];
+  displayedColumns = ['active', 'name', 'createDate', 'copy'];
 
   @ViewChild(MatSort) sort: MatSort;
 
@@ -30,5 +30,9 @@ export class UserComponent {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.store.dispatch(new UserFilterAction(filterValue));
+  }
+
+  viewCopy(user: IUser) {
+    this.store.dispatch(new UserCopyAction(user));
   }
 }
